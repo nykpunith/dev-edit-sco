@@ -12,11 +12,6 @@
         <label>Phone Inquiry</label>
     </standardValue>
     <standardValue>
-        <fullName>Partner Referral</fullName>
-        <default>false</default>
-        <label>Partner Referral</label>
-    </standardValue>
-    <standardValue>
         <fullName>Purchased List</fullName>
         <default>false</default>
         <label>Purchased List</label>
