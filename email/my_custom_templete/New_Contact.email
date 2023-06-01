@@ -1,0 +1,4 @@
+Hello,
+
+{!Contact.FirstName} {!Contact.LastName} you contact is created successfully !!
+with this name {!Contact.FirstName} {!Contact.LastName}

@@ -1,0 +1,23 @@
+trigger OpportunityTrigger on Opportunity (after insert, after update,before insert,before update) {
+//BEFORE
+    if(trigger.isBefore){
+        if(trigger.isInsert){
+            OpportunityHandler.changeRecordType(trigger.new);
+        }
+        if(trigger.isUpdate){
+            OpportunityHandler.changeRecordType(trigger.new);
+            OpportunityHandler.updateAccField(trigger.new,trigger.oldMap);
+        }
+    }
+    //AFTER
+    if(trigger.isAfter){
+        if(trigger.isInsert){
+            OpportunityHandler.notifyVp(trigger.new);
+            OpportunityHandler.createTaskforPPQ(trigger.new);
+        }
+        if(trigger.isUpdate){
+            OpportunityHandler.notifyVp(trigger.new);
+            OpportunityHandler.createTaskforPPQ(trigger.new);
+        }
+    }
+}
