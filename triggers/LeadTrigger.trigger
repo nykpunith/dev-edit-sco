@@ -1,0 +1,19 @@
+trigger LeadTrigger on Lead (before insert,before update, after insert) {
+//BEFORE
+    if(trigger.IsBefore){
+        if(trigger.isInsert){
+            LeadHandler.updateDescription(trigger.new);
+            LeadHandler.updateRating(trigger.new);
+        }
+        if(trigger.isUpdate){
+            LeadHandler.updateDescription(trigger.new);
+            LeadHandler.updateRating(trigger.new);
+        }
+    }
+    //AFTER
+    if(trigger.IsAfter){
+        if(trigger.isInsert){
+            LeadHandler.sendAttachment(trigger.new);
+        }
+    }
+}

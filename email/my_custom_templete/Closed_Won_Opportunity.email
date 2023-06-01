@@ -1,0 +1,4 @@
+Hello dear 
+
+The Opportunity {!Opportunity.OwnerFullName} is {!Opportunity.StageName} with
+{!Opportunity.Amount} amount.
